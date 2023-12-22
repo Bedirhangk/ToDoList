@@ -25,6 +25,7 @@ public class TodoListMethods
 
     public void ShowLines()
     {
+        Console.Clear();
         Console.WriteLine("*******************ToDo Line*******************");
         Console.WriteLine();
         foreach(var a in ToDoLine)
@@ -57,10 +58,13 @@ public class TodoListMethods
             Console.WriteLine("Duty Person  : "+Person[a.Id1-1].Person_Name);
             Console.WriteLine("--------------------------------------------------");
         }
+        Console.WriteLine("Please press a key to countiune...");
+        Console.ReadKey();
     }
 
     public void AddCard()
     {
+        //Bunu Böyle Yapıp Her Switch Case durumunda değer istemektense tek bir yerde değer iste eklemeleri switch case ile yap ki çok daha hızlı ve okunabilir bir kod olur not beş dakika sonraki sen.
         Console.Clear();
 
         string name,content;
@@ -93,6 +97,8 @@ public class TodoListMethods
         {
             case 1:
 
+                Console.Clear();
+
                 Console.Write("Card Title:");
                 name=Console.ReadLine();
                 
@@ -100,7 +106,7 @@ public class TodoListMethods
                 content=Console.ReadLine();
 
                 //this part checking Priorty input and takes user input.
-
+                loop=true;
                 while(loop)
                 {
                     try
@@ -110,8 +116,6 @@ public class TodoListMethods
                         idenum=EnumPri.Range(idenum);
                         if(idenum!=0)
                             loop=false;
-                        else
-                            Console.WriteLine("Wrong Range. Pls input must be between 1 to 5");
 
 
                     }
@@ -124,7 +128,8 @@ public class TodoListMethods
                 }
 
                 //This Part Checking ID And Takes User İnput
-
+                loop=true;
+                Staff.showstaff(Person);
                 while(loop)
                 {
                     try
@@ -147,10 +152,16 @@ public class TodoListMethods
                 } 
             
                 EnumPri.Buyukluk d = (EnumPri.Buyukluk)idenum;
-                ToDoLine.Add(new TodoLists(name,content,Enum.GetName(typeof(EnumPri.Buyukluk),d),id));          
+                ToDoLine.Add(new TodoLists(name,content,Enum.GetName(typeof(EnumPri.Buyukluk),d),id));
+
+                Console.WriteLine("New Card Added. Please Press Any Key To Countiune...");
+                Console.ReadKey();          
 
                 break;
             case 2:
+
+                Console.Clear();
+
                 Console.Write("Card Title:");
                 name=Console.ReadLine();
                 
@@ -158,7 +169,7 @@ public class TodoListMethods
                 content=Console.ReadLine();
 
                 //this part checking Priorty input and takes user input.
-
+                loop=true;
                 while(loop)
                 {
                     try
@@ -168,8 +179,7 @@ public class TodoListMethods
                         idenum=EnumPri.Range(idenum);
                         if(idenum!=0)
                             loop=false;
-                        else
-                            Console.WriteLine("Wrong Range. Pls input must be between 1 to 5");
+
 
 
                     }
@@ -182,7 +192,8 @@ public class TodoListMethods
                 }
 
                 //This Part Checking ID And Takes User İnput
-
+                loop=true;
+                Staff.showstaff(Person);
                 while(loop)
                 {
                     try
@@ -205,10 +216,16 @@ public class TodoListMethods
                 } 
             
                 EnumPri.Buyukluk a = (EnumPri.Buyukluk)idenum;
-                InProgressLine.Add(new TodoLists(name,content,Enum.GetName(typeof(EnumPri.Buyukluk),a),id));          
+                InProgressLine.Add(new TodoLists(name,content,Enum.GetName(typeof(EnumPri.Buyukluk),a),id));
+
+                Console.WriteLine("New Card Added. Please Press Any Key To Countiune...");
+                Console.ReadKey();            
 
                 break;
             case 3:
+
+                Console.Clear();
+
                 Console.Write("Card Title:");
                 name=Console.ReadLine();
                 
@@ -216,7 +233,7 @@ public class TodoListMethods
                 content=Console.ReadLine();
 
                 //this part checking Priorty input and takes user input.
-
+                loop=true;
                 while(loop)
                 {
                     try
@@ -226,8 +243,7 @@ public class TodoListMethods
                         idenum=EnumPri.Range(idenum);
                         if(idenum!=0)
                             loop=false;
-                        else
-                            Console.WriteLine("Wrong Range. Pls input must be between 1 to 5");
+
 
 
                     }
@@ -240,7 +256,8 @@ public class TodoListMethods
                 }
 
                 //This Part Checking ID And Takes User İnput
-
+                loop=true;
+                Staff.showstaff(Person);
                 while(loop)
                 {
                     try
@@ -263,7 +280,10 @@ public class TodoListMethods
                 } 
             
                 EnumPri.Buyukluk b = (EnumPri.Buyukluk)idenum;
-                DoneLine.Add(new TodoLists(name,content,Enum.GetName(typeof(EnumPri.Buyukluk),b),id));          
+                DoneLine.Add(new TodoLists(name,content,Enum.GetName(typeof(EnumPri.Buyukluk),b),id)); 
+
+                Console.WriteLine("New Card Added. Please Press Any Key To Countiune...");
+                Console.ReadKey();           
 
                 break;
         }

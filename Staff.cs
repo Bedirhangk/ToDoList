@@ -18,4 +18,15 @@ class Staff
     public int Person_ID { get => person_ID; set => person_ID = value; }
     public string? Person_Name { get => person_Name; set => person_Name = value; }
     public string? Person_Surname { get => person_Surname; set => person_Surname = value; }
+
+    public static void showstaff(List<Staff> a)
+    {
+        foreach (var item in a)
+        {
+            Console.WriteLine("Name     : "+item.person_Name);
+            Console.WriteLine("Surname  : "+item.person_Surname);
+            Console.WriteLine("ID       : "+item.person_ID);
+            Console.WriteLine();
+        }
+    }
 }

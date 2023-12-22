@@ -6,6 +6,5 @@ class Program
     {
         App app=new App();
         app.Run();
-        Console.ReadKey();
     }
 }
